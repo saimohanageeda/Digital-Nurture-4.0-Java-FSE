@@ -1,0 +1,76 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+/* Navigation */
+nav {
+  background: #333;
+  padding: 10px;
+}
+nav a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Header Styles */
+#welcomeBanner {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+/* Highlight Class */
+.highlight {
+  color: darkgreen;
+}
+
+/* Table & Images */
+.gallery-img {
+  border: 2px solid #333;
+  width: 100px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+input, textarea, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+button {
+  padding: 10px;
+  background: #007BFF;
+  color: white;
+  border: none;
+}
+button:hover {
+  background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-img {
+    width: 80px;
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <a href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <!-- Welcome Banner -->
+  <div id="welcomeBanner">
+    Welcome to our <span style="color: red; font-weight: bold;">community events!</span>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <h2 class="highlight">Upcoming Events Gallery</h2>
+      <table>
+        <caption>Past Community Events</caption>
+        <tr>
+          <td><img src="event1.jpg" alt="Event 1" title="Music Night" class="gallery-img"></td>
+          <td><img src="event2.jpg" alt="Event 2" title="Food Fest" class="gallery-img"></td>
+          <td><img src="event3.jpg" alt="Event 3" title="Charity Run" class="gallery-img" ondblclick="enlargeImage(this)"></td>
+        </tr>
+        <tr>
+          <td><img src="event4.jpg" alt="Event 4" title="Art Expo" class="gallery-img"></td>
+          <td><img src="event5.jpg" alt="Event 5" title="Book Fair" class="gallery-img"></td>
+          <td><img src="event6.jpg" alt="Event 6" title="Youth Meetup" class="gallery-img"></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+      <h2 class="highlight">Register for an Event</h2>
+      <form id="registrationForm" onsubmit="submitForm(event)">
+        <input type="text" name="name" placeholder="Your Name" required autofocus>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="tel" name="phone" placeholder="Phone (10 digits)" onblur="validatePhone(this)" required>
+        <input type="date" name="date" required>
+        
+        <select id="eventType" name="eventType" onchange="showFee(this)">
+          <option value="">Select Event</option>
+          <option value="music">Music - $10</option>
+          <option value="art">Art - $5</option>
+          <option value="food">Food - Free</option>
+        </select>
+        
+        <div id="feeDisplay"></div>
+
+        <textarea name="message" placeholder="Message" onkeyup="countCharacters(this)"></textarea>
+        <div id="charCount">Characters: 0</div>
+
+        <button type="submit">Submit</button>
+        <output id="confirmation"></output>
+      </form>
+
+      <button onclick="clearPrefs()">Clear Preferences</button>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="highlight">Watch Our Event Promo</h2>
+      <video width="400" controls oncanplay="alert('Video ready to play!')">
+        <source src="promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- Geolocation -->
+    <section>
+      <h2 class="highlight">Find Events Near You</h2>
+      <button onclick="findNearby()">Find Nearby Events</button>
+      <div id="locationResult"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Local City Council</p>
+  </footer>
+
+</body>
+</html>
